@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Layout, Menu, Icon } from 'antd'
-import './style.css'
+// import './style.css'
+import './style.less'
+
 
 const { Header, Sider, Content, Footer } = Layout
 
@@ -15,21 +17,27 @@ class Home extends Component {
       collapsed: !this.state.collapsed,
     })
   }
+  loadMenu = () => (
+    <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+      <Menu.Item key="1">
+        <Icon type="folder" />
+        <span>Categories</span>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <Icon type="tags" />
+        <span>Tags</span>
+      </Menu.Item>
+    </Menu>
+  )
   render() {
     return (
       <Layout style={{ minHeight: '100vh' }}>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-          <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1">
-              <Icon type="pie-chart" />
-              <span>Categories</span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="desktop" />
-              <span>Tags</span>
-            </Menu.Item>
-          </Menu>
+        <Sider trigger={null} collapsible>
+          <div className="logo">
+            {/* !this.state.collapsed && <div style={{ float: 'right', fontSize: 20, marginRight: 20 }}> <span>Spanboard</span></div> */}
+            <Icon spin type="aliwangwang-o" style={{ fontSize: 30, float: 'left' }} />
+          </div>
+          {this.loadMenu()}
         </Sider>
         <Layout>
           <Header style={{ background: '#fff', padding: 0 }} >
