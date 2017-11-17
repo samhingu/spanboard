@@ -4,7 +4,9 @@ import { Layout, Menu, Icon } from 'antd'
 import './style.less'
 
 
-const { Header, Sider, Content, Footer } = Layout
+const {
+  Header, Sider, Content, Footer,
+} = Layout
 
 class Home extends Component {
   state = {
@@ -34,7 +36,8 @@ class Home extends Component {
       <Layout style={{ minHeight: '100vh' }}>
         <Sider trigger={null} collapsible>
           <div className="logo">
-            {/* !this.state.collapsed && <div style={{ float: 'right', fontSize: 20, marginRight: 20 }}> <span>Spanboard</span></div> */}
+            {/* !this.state.collapsed && <div style={{
+              float: 'right', fontSize: 20, marginRight: 20 }}> <span>Spanboard</span></div> */}
             <Icon spin type="aliwangwang-o" style={{ fontSize: 30, float: 'left' }} />
           </div>
           {this.loadMenu()}

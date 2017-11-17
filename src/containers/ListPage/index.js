@@ -3,7 +3,7 @@ import { Card, Col, Row } from 'antd'
 
 class ListPage extends Component {
   componentWillMount() {
-    alert('s')
+    // alert('s')
   }
   render() {
     return (

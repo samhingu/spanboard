@@ -58,3 +58,5 @@ typings/
 .env
 
 yarn.lock
+package-lock.json
+build/static/js/main.4da4d4ae.js.map

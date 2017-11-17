@@ -10,7 +10,6 @@ class EditableTagGroup extends Component {
 
   handleClose = (removedTag) => {
     const tags = this.state.tags.filter((tag) => tag !== removedTag)
-    console.log(tags)
     this.setState({ tags })
   }
 
@@ -23,21 +22,19 @@ class EditableTagGroup extends Component {
   }
 
   handleInputConfirm = () => {
-    const state = this.state
-    const inputValue = state.inputValue
-    let tags = state.tags
+    const { tags, inputValue } = this.state
+    let newTags = tags
     if (inputValue && tags.map((i) => i.toLowerCase()).indexOf(inputValue.toLowerCase()) === -1) {
-      tags = [...tags, inputValue]
+      newTags = [...tags, inputValue]
     }
-    console.log(tags)
     this.setState({
-      tags,
+      tags: newTags,
       inputVisible: false,
       inputValue: '',
     })
   }
 
-  saveInputRef = (input) => this.input = input
+  saveInputRef = (input) => { this.input = input }
 
   render() {
     const { tags, inputVisible, inputValue } = this.state

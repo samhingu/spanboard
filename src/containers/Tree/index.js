@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Tree, Icon } from 'antd'
 
-const TreeNode = Tree.TreeNode
+const { TreeNode } = Tree
 
 class TreeDemo extends Component {
   state = {
@@ -12,7 +12,7 @@ class TreeDemo extends Component {
     ],
   }
   onDrop = (info) => {
-    console.log(info)
+    // console.log(info)
     const dropKey = info.node.props.eventKey
     const dragKey = info.dragNode.props.eventKey
     const dropPos = info.node.props.pos.split('-')
@@ -49,7 +49,6 @@ class TreeDemo extends Component {
     } else {
       loop(data, dropKey, (item) => {
         item.children = item.children || []
-        // where to insert 示例添加到尾部，可以是随意位置
         item.children.push(dragObj)
       })
     }
